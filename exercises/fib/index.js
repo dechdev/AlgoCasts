@@ -8,6 +8,42 @@
 // Example:
 //   fib(4) === 3
 
-function fib(n) {}
+// Iterative
+function fib(n) {
+  if (n === 0 || n === 1) {
+    return n === 0 ? 0 : 1;
+  }
+
+  //   [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
+  let counter = 2;
+  let prev1 = 0;
+  let prev2 = 1;
+  let currTotal = 1;
+  while (counter < n) {
+    prev1 = prev2;
+    prev2 = currTotal;
+    currTotal = prev1 + prev2;
+    counter++;
+  }
+
+  return currTotal;
+}
+
+// Recursive
+// function fib(n) {
+//   if (n === 0 || n === 1) {
+//     return n === 0 ? 0 : 1;
+//   }
+
+//   const makeFib = (prev1, prev2, currNum) => {
+//     if (currNum === n) {
+//       return prev1 + prev2;
+//     }
+
+//     return makeFib(prev2, prev1 + prev2, currNum + 1);
+//   };
+
+//   return makeFib(0, 1, 2);
+// }
 
 module.exports = fib;
