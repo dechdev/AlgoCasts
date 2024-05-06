@@ -13,7 +13,23 @@
 //       '  #  '
 //       ' ### '
 //       '#####'
+//   pyramid(4)
+//       '   #   '
+//       '  ###  '
+//       ' ##### '
+//       '#######'
 
-function pyramid(n) {}
+function pyramid(n) {
+  const totalLength = n * 2 - 1;
+  for (let i = 1; i <= n; i++) {
+    const numPounds = i * 2 - 1;
+    console.log(
+      "#"
+        .repeat(numPounds)
+        .padStart((totalLength + numPounds) / 2, " ")
+        .padEnd(totalLength, " ")
+    );
+  }
+}
 
 module.exports = pyramid;
