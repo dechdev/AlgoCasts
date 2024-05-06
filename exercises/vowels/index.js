@@ -20,4 +20,8 @@ function vowels(str) {
   return numVowels;
 }
 
+// function vowels(str) {
+//   return str.match(/[aeiou]/gi)?.length ?? 0;
+// }
+
 module.exports = vowels;
